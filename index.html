@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Student Management (JS)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="./style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 Student Management</h1>
+
+    <section class="card">
+      <h2>Add / Edit Student</h2>
+      <form id="student-form">
+        <input type="hidden" id="student-id" />
+        <div class="grid">
+          <label>
+            Full name
+            <input id="name" type="text" placeholder="Vo Minh Trung" required />
+          </label>
+          <label>
+            Student ID
+            <input id="code" type="text" placeholder="SV2025001" required />
+          </label>
+          <label>
+            Major
+            <input id="major" type="text" placeholder="Computer Science" />
+          </label>
+          <label>
+            GPA (0.0 - 4.0)
+            <input id="gpa" type="number" min="0" max="4" step="0.01" placeholder="3.25" />
+          </label>
+        </div>
+        <div class="actions">
+          <button type="submit" class="primary" id="save-btn">Save</button>
+          <button type="button" id="reset-btn">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Students</h2>
+      <div class="toolbar">
+        <input id="search" type="search" placeholder="Search by name, code, major..." />
+        <select id="sort">
+          <option value="name.asc">Name ↑</option>
+          <option value="name.desc">Name ↓</option>
+          <option value="gpa.desc">GPA ↓</option>
+          <option value="gpa.asc">GPA ↑</option>
+          <option value="code.asc">Code ↑</option>
+          <option value="code.desc">Code ↓</option>
+        </select>
+        <button id="seed-btn" title="Add sample data">Seed</button>
+        <button id="clear-btn" class="danger" title="Clear all">Clear</button>
+      </div>
+
+      <div class="table-wrap">
+        <table id="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Code</th>
+              <th>Major</th>
+              <th>GPA</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <!-- rows render here -->
+          </tbody>
+        </table>
+        <p id="empty" class="empty">No students yet.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Built by <a href="https://github.com/minhtrungv212-prog" target="_blank">@minhtrungv212-prog</a> — self-taught journey 🚀</p>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
