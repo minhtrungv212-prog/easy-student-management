@@ -1,0 +1,42 @@
+:root {
+  --bg: #0b1020;
+  --card: #121938;
+  --muted: #96a0c3;
+  --text: #eaf0ff;
+  --primary: #6aa1ff;
+  --danger: #ff6b6b;
+  --ring: 0 0 0 3px rgba(106,161,255,.25);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: var(--text); background: radial-gradient(1200px 600px at 20% -10%, #1a2456 0%, transparent 50%), var(--bg);
+}
+.container { max-width: 960px; margin: 40px auto; padding: 0 16px; }
+h1 { margin: 0 0 16px; letter-spacing: .5px; }
+.card {
+  background: var(--card); border: 1px solid rgba(255,255,255,.06);
+  border-radius: 16px; padding: 16px; margin: 16px 0; box-shadow: 0 6px 30px rgba(0,0,0,.2);
+}
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+label { display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+input, select, button {
+  padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.1);
+  background: #0f1530; color: var(--text); outline: none;
+}
+input:focus, select:focus { box-shadow: var(--ring); border-color: rgba(106,161,255,.5); }
+.actions { display: flex; gap: 10px; margin-top: 10px; }
+button { cursor: pointer; }
+button.primary { background: linear-gradient(180deg, #6aa1ff, #3c6bf1); border: none; }
+button.danger { background: linear-gradient(180deg, #ff7b7b, #ff4d4d); border: none; }
+.toolbar { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,.08); }
+td .row-actions { display: flex; gap: 8px; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; background: rgba(255,255,255,.07); color: var(--muted); font-size: 12px; }
+.empty { text-align: center; color: var(--muted); padding: 12px; display: none; }
+footer { text-align: center; color: var(--muted); margin: 20px 0; font-size: 14px; }
+
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
